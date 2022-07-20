@@ -7,12 +7,22 @@ const Baitap1 = () => {
     <Wrapper>
       <div className="block">
         <div>
-          <Button size="sm" />
-          <Button size="lg" />
-          <Button type="secondary" size="lg" />
-          <Button type="secondary" size="sm" />
-          <Button disabled type="secondary" size="sm" />
-          <Button disabled isFullWidth type="primary" size="sm" />
+          <Button
+            $value="button"
+            $width="50%"
+            $type="primary"
+            $size="sm"
+            $disable
+          />
+          <Button
+            $width="60%"
+            $type="secondary"
+            $size="lg"
+            $disable
+            $value="nguyen"
+          />
+          <Button $width="40%" $type="primary" $size="lg" $value="nguyen" />
+          <Button $width="30%" $type="secondary" $size="base" $value="nguyen" />
         </div>
       </div>
       <div className="block">asd</div>
