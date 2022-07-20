@@ -1,9 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = ({ type, size, disabled }) => {
+const Button = ({ type, size, disabled, isFullWidth }) => {
   return (
-    <ButtonBase type={type} size={size} disabled={disabled}>
+    <ButtonBase
+      type={type}
+      size={size}
+      disabled={disabled}
+      isFullWidth={isFullWidth}
+    >
       Button
     </ButtonBase>
   );
@@ -18,6 +23,7 @@ const ButtonBase = styled.button`
   border-radius: 4px;
   font-weight: 700;
   line-height: 24px;
+  display: inline-block;
   // type
   ${(props) => {
     switch (props.type) {
@@ -58,6 +64,18 @@ const ButtonBase = styled.button`
         return `
           color: white;  
           border: none;
+          background: #FF0000;
+          &:hover {
+            background: rgba(255, 0, 0, 0.7);
+            /* Dropshadow red */
+            box-shadow: 0px 4px 6px rgba(194, 0, 0, 0.2);            
+          }
+          &:focus {
+            background: #C20000;
+          }
+          &:active {
+            background: #C20000;
+          }
         `;
     }
   }};
@@ -84,23 +102,24 @@ const ButtonBase = styled.button`
   }};
 
   // status
+
   ${(props) => {
-    switch (props.disabled) {
-      case true:
-        if (props.type === "primary") {
-          return `
-            background: #999999;
-            `;
-        }
-        if (props.type === "secondary") {
-          return `
-            border: 1px solid #999999;
-            color:#999999;
-              `;
-        }
-      default:
-        return `
+    if (props.disabled && props.type === "primary") {
+      return `
+        background: #999999;
+        pointer-events: none;
         `;
     }
-  }};
+
+    if (props.disabled && props.type === "secondary") {
+      return `
+        border: 1px solid #999999;
+        color:#999999;
+        pointer-events: none;
+          `;
+    }
+  }}
+
+  //   full width
+  width: ${(props) => (props.isFullWidth ? "100%;display: block;" : "auto")};
 `;

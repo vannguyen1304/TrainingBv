@@ -7,8 +7,12 @@ const Baitap1 = () => {
     <Wrapper>
       <div className="block">
         <div>
-          <Button disabled={true} type="secondary" size="sm" />
-          <Button disabled={true} type="primary" size="lg" />
+          <Button size="sm" />
+          <Button size="lg" />
+          <Button type="secondary" size="lg" />
+          <Button type="secondary" size="sm" />
+          <Button disabled type="secondary" size="sm" />
+          <Button disabled isFullWidth type="primary" size="sm" />
         </div>
       </div>
       <div className="block">asd</div>
