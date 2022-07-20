@@ -1,28 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../Button/Button";
+import Button from "../common/Button/index.jsx";
 
 const Baitap1 = () => {
   return (
     <Wrapper>
       <div className="block">
         <div>
-          <Button
-            $value="button"
-            $width="50%"
-            $type="primary"
-            $size="sm"
-            $disable
-          />
-          <Button
-            $width="60%"
-            $type="secondary"
-            $size="lg"
-            $disable
-            $value="nguyen"
-          />
-          <Button $width="40%" $type="primary" $size="lg" $value="nguyen" />
-          <Button $width="30%" $type="secondary" $size="base" $value="nguyen" />
+          <Button>asdsa</Button>
+          <Button $type="secondary">asdsa</Button>
+          <Button $type="secondary">asdsa</Button>
+          <Button $type="primary" $disabled>
+            button
+          </Button>
+          <Button $type="secondary" $disabled>
+            button
+          </Button>
         </div>
       </div>
       <div className="block">asd</div>

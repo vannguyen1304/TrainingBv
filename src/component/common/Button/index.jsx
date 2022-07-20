@@ -5,8 +5,8 @@ const Button = ({
   $width = "100%",
   $type = "primary",
   $size = "base",
-  $disable,
-  $value,
+  $disabled,
+  children,
   ...rest
 }) => {
   switch ($type) {
@@ -16,9 +16,9 @@ const Button = ({
           $width={$width}
           {...rest}
           $size={$size}
-          $disable={$disable}
+          $disabled={$disabled}
         >
-          {$value}
+          {children}
         </PrimaryButton>
       );
     case "secondary":
@@ -27,10 +27,21 @@ const Button = ({
           $width={$width}
           $size={$size}
           {...rest}
-          $disable={$disable}
+          $disabled={$disabled}
         >
-          {$value}
+          {children}
         </SecondaryButton>
+      );
+      default:
+      return (
+        <PrimaryButton
+          $width={$width}
+          {...rest}
+          $size={$size}
+          $disabled={$disabled}
+        >
+          {children}
+        </PrimaryButton>
       );
   }
 };

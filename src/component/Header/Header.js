@@ -39,7 +39,6 @@ const Title = styled.div`
 
 const Button = styled.button`
   padding: 10px;
-  border-radious: none;
   outline: none;
   border: 1px solid white;
   cursor: pointer;

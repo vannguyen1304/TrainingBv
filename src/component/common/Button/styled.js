@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 
-export const ButtonBase = styled.button`
+export const Button = styled.button.attrs(({ $disabled }) => {
+  return {
+    disabled: $disabled ? true : false,
+  };
+})``;
+
+export const ButtonBase = styled(Button)`
   border: none;
   outline: none;
   cursor: pointer;
@@ -52,12 +58,10 @@ export const PrimaryButton = styled(ButtonBase)`
     background: #c20000;
   }
 
-  ${({ $disable }) =>
-    $disable &&
-    css`
-      background: #999999;
-      pointer-events: none;
-    `}
+  &:disabled {
+    background: #999999;
+    pointer-events: none;
+  }
 `;
 
 export const SecondaryButton = styled(ButtonBase)`
@@ -74,11 +78,9 @@ export const SecondaryButton = styled(ButtonBase)`
     border: 2px solid #ff0000;
   }
 
-  ${({ $disable }) =>
-    $disable &&
-    css`
-      border: 1px solid #999999;
-      color: #999999;
-      pointer-events: none;
-    `}
+  &:disabled {
+    border: 1px solid #999999;
+    color: #999999;
+    pointer-events: none;
+  }
 `;

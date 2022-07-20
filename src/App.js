@@ -1,8 +1,8 @@
 import "./App.css";
-import Header from "./component/Header/Header";
+import Header from "./component/Header";
 import { Routes, Route } from "react-router-dom";
-import BaiTap1 from "./component/BaiTap1/Baitap1";
-import BaiTap2 from "./component/BaiTap2/BaiTap2";
+import BaiTap1 from "./component/BaiTap1";
+import BaiTap2 from "./component/BaiTap2";
 
 function App() {
   return (
