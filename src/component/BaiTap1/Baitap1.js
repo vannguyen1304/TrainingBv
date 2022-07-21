@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../common/Button/index.jsx";
+import Input from "../common/Input";
+import { UserOutlined } from "@ant-design/icons";
 
 const Baitap1 = () => {
   return (
@@ -18,7 +20,18 @@ const Baitap1 = () => {
           </Button>
         </div>
       </div>
-      <div className="block">asd</div>
+      <div className="block">
+        <Input $size="small" />
+        <Input
+          $status="warning"
+          $size="default"
+          $prefix={<UserOutlined />}
+          $placeholder="Warning with prefix"
+          $width="200px"
+          $height="40px"
+        />
+        <Input $size="large" $status="error" />
+      </div>
     </Wrapper>
   );
 };
