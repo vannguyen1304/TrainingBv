@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "../common/Button/index.jsx";
 import Input from "../common/Input";
 import { UserOutlined } from "@ant-design/icons";
+import SelectBase from "../common/Select/index.jsx";
 
 const Baitap1 = () => {
   return (
@@ -31,6 +32,8 @@ const Baitap1 = () => {
           $height="40px"
         />
         <Input $size="large" $status="error" />
+        <SelectBase $width="100px" $height="30px" $status="error" />
+        <SelectBase $width="200px" $height="50px" />
       </div>
     </Wrapper>
   );
